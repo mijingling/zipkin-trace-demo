@@ -60,7 +60,7 @@
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
-			<version>4.1.31.Final</version><!--$NO-MVN-MAN-VER$-->
+			<version>4.1.42.Final</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
 
 		<!-- 从dubbo2.6.x升级至dubbo2.8.4时，需要显式引入包starter-web、zkclient -->
