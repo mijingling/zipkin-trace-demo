@@ -1,0 +1,28 @@
+server:
+   port: 8083
+logging:
+   level:
+      org:
+         springframework:
+            web: DEBUG
+spring:
+   sleuth:
+      sampler:
+         probability: 1.0
+   zipkin:
+      sender:
+         #type: kafka
+         type: web
+      base-url: http://10.1.240.191:9413
+      kafka:
+         topic: zipkin
+   kafka:
+      bootstrap-servers: PLAINTEXT://10.1.240.213:9092
+   main:
+      allow-bean-definition-overriding: true
+   application:
+      name: spring-rest
+
+      
+      
+      

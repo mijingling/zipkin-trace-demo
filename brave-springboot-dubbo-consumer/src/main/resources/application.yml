@@ -1,0 +1,36 @@
+server:
+   port: 8086
+dubbo:
+   application:
+      name: consumer-dubbo-brave
+   registry:
+      address: zookeeper://10.1.240.213:2181
+   protocol:
+      name: dubbo
+      port: 20886
+   provier:
+      filter: tracing
+   consumer:
+      filter: tracing
+
+brave:
+   kafka:
+      bootstrap-servers: PLAINTEXT://10.1.240.213:9093
+      topic: zipkin
+   sampler:
+      probability: 1.0
+spring:
+   application:
+      name: consumer-dubbo-brave
+   #dubbo升级至2.6.6时，需要补加该配置参数
+   main:
+      allow-bean-definition-overriding: true
+      
+logging:
+   level:
+      org:
+         springframework:
+            web: DEBUG
+      
+      
+      
